@@ -15,16 +15,16 @@
             border: 1px solid black;
             padding: 5px;
             text-align: center;
-            word-wrap: break-word;
-            background: #0BBCE0;
             font-weight: 600;
             font-size: 1.7em;
             font-family: Roboto;
         }
     </style>
-    <script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+    
 </head>
 <body>
-    <div class="functionField" contenteditable="true"></div>
+    <div id="functionInput" placeholder="Enter Function Here" contenteditable="true"></div>
+    <button type="button" onclick="evaluatefx()">Evaluate</button>
+    <div class="functionField"></div>
 </body>
 </html>
