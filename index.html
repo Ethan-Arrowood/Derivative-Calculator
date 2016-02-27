@@ -1,30 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Derivative Calculator</title>
-    
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script src="script.js"></script>
     <!-- Google Fonts -->
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,700,500,300' rel='stylesheet' type='text/css'>
     <style>
-        .functionField {
-            height: 100px;
-            width: 350px;
+        #functionInfo {
+            height: auto;
+            width: auto;
             border: 1px solid black;
             padding: 5px;
             text-align: center;
             font-weight: 600;
-            font-size: 1.7em;
+            font-size: 1.2em;
             font-family: Roboto;
         }
+        #functionInput {
+            border: 1px solid black;
+        }
     </style>
-    
+
 </head>
+
 <body>
-    <div id="functionInput" placeholder="Enter Function Here" contenteditable="true"></div>
+    <p><strong>*Please Note*</strong> This project is in very early development. Its functionality is extremely limited for the time being.</p>
+    <p>When entering a function please follow these guidlines:</p>
+    <ul>
+        <li>Terms are written in the form: cx^(e), where c is the coefficient, x is the base, and e is your numerical exponent.</li>
+        <li>Use ONE variable as the base, throughout your entire function.</li>
+        <li>Coefficients and Exponents can only be positive whole numbers ( 1, 5, 99, 1001 )</li>
+        <li>An example function: 3x^(3)+2x^(2)+x^(2)+7x+10</li>
+    </ul>
+    <pre>Enter function below: </pre>
+    <div id="functionInput" contenteditable="true"></div>
     <button type="button" onclick="evaluatefx()">Evaluate</button>
-    <div class="functionField"></div>
+    <div id="functionInfo"></div>
 </body>
+
 </html>
