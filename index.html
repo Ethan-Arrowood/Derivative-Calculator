@@ -7,6 +7,7 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script src="script.js"></script>
+<!--    <script src="testscript.js"></script>-->
     <!-- Google Fonts -->
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,700,500,300' rel='stylesheet' type='text/css'>
     <style>
@@ -31,10 +32,11 @@
     <p><strong>*Please Note*</strong> This project is in very early development. Its functionality is extremely limited for the time being.</p>
     <p>When entering a function please follow these guidlines:</p>
     <ul>
-        <li>Terms are written in the form: cx^(e), where c is the coefficient, x is the base, and e is your numerical exponent.</li>
-        <li>Use ONE variable as the base, throughout your entire function.</li>
+        <li>Terms are written in the form: cx^(e), where cx is the base, c is the coefficient, x is the variable, and e is your numerical exponent.</li>
+        <li>Join terms using either the '+' operator or the '-' operator.</li>
+        <li>Use the same variable in each of your bases. This calculator does not support Implicit Differentiation yet. </li>
         <li>Coefficients and Exponents can only be positive whole numbers ( 1, 5, 99, 1001 )</li>
-        <li>An example function: 3x^(3)+2x^(2)+x^(2)+7x+10</li>
+        <li>An example function: 3x^(3)+2x^(2)-x^(2)+7x+10</li>
     </ul>
     <pre>Enter function below: </pre>
     <div id="functionInput" contenteditable="true"></div>
