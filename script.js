@@ -130,6 +130,8 @@ function evaluatefx() {
             "<br>Variable: " + fxTermOBJArray[n].variable +
             "</p>";
     } //'pretty print' loop for the array of Term objects
+    
+    console.log(basicpowerruleCalculator(fxText, fxTermOBJArray));
 }
 
 function Term(term, base, sign, coefficient, exponent, variable) { //Term object constructor 
@@ -146,7 +148,13 @@ function setBase(term) { //finds the Base of the term
     var basePatt = /(?!\()(\d+|[+-]\d*)(?!\))/; //regex for base 
     //matches operator, and the following coeffecient
     var base = basePatt.exec(term);
-    fxBase = base.pop();
+    if (base) {
+        fxBase = base.pop();
+    } else {
+        fxBase = "+1";
+    }
+    
+    
 }
 function setSign(term) {
     if (term[0] != "+" && term[0] != "-") { //this occurs when the first term is positive
@@ -178,4 +186,31 @@ function setExp(term) { //finds the Exponent of the term
     } else { //else the variable is technically there, but has a power of 0
         return "0";
     }
+}
+
+function basicpowerruleCalculator(fx, terms) {
+    
+    var divWithInfo = document.getElementById("functionInfo");
+    
+    var result = "";
+    for (var n in terms) { //loop through all terms
+        
+        var newCoeff = parseInt(terms[n].coeff) * parseInt(terms[n].exp); //drop the power and multiply it by the coefficient 
+        
+        if(newCoeff == 0) { //if 0 just skip this term. It was a constant to begin with
+            continue;
+        } else if ( parseInt(terms[n].exp) == 1 ) { 
+            result += terms[n].sign + newCoeff;
+        } else {
+            result += terms[n].sign + newCoeff + terms[n].variable; //normal result
+        }
+        
+        if (parseInt(terms[n].exp) > 2) { 
+            result += "^(" + (parseInt(terms[n].exp) - 1) + ")";
+        }
+    }
+    if (result[0] == "+") { result = result.substring(1); }
+    divWithInfo.innerHTML += "<p><span style='color:red'>Original:</span> " + fx + "</p>";                                                
+    divWithInfo.innerHTML += "<p><span style='color:red'>Derived Function:</span> " + result + "</p>";                                                
+    return result;                                          
 }
