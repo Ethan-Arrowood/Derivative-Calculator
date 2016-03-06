@@ -6,25 +6,14 @@
     <title>Derivative Calculator</title>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-    <script src="script.js"></script>
-<!--    <script src="testscript.js"></script>-->
+    <script src="evaluateFunction.js"></script>
+    <script src="textualEventHandlers.js"></script>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=AM_HTMLorMML"></script>
+    <script src="ASCIIMathML.js"></script>
+    <!--    <script src="testscript.js"></script>-->
     <!-- Google Fonts -->
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,700,500,300' rel='stylesheet' type='text/css'>
-    <style>
-        #functionInfo {
-            height: auto;
-            width: auto;
-            border: 1px solid black;
-            padding: 5px;
-            text-align: center;
-            font-weight: 600;
-            font-size: 1.2em;
-            font-family: Roboto;
-        }
-        #functionInput {
-            border: 1px solid black;
-        }
-    </style>
+    <link href="style.css" rel="stylesheet" type="text/css">
 
 </head>
 
@@ -42,6 +31,57 @@
     <div id="functionInput" contenteditable="true"></div>
     <button type="button" onclick="evaluatefx()">Evaluate</button>
     <div id="functionInfo"></div>
+
+    <hr>
+
+    <div class="calculator">
+        <div class="entryField" contenteditable="true">Enter function here</div>
+        <table class="calcButtons">
+            <tr>
+                <td title="frc">`n/d`</td>
+                <td title="add">`+`</td>
+                <td title="sub">`-`</td>
+                <td title="mul">`xx`</td>
+                <td title="div">`-:`</td>
+            </tr>
+            <tr>
+                <td title="pow">`x^y`</td>
+                <td title="sin" class="trigFx">`sin(x)`</td>
+                <td title="cos" class="trigFx">`cos(x)`</td>
+                <td title="tan" class="trigFx">`tan(x)`</td>
+                <td title="opp">`(`</td>
+            </tr>
+            <tr>
+                <td title="sqt">`sqrt(x)`</td>
+                <td title="csc" class="trigFx">`csc(x)`</td>
+                <td title="sec" class="trigFx">`sec(x)`</td>
+                <td title="cot" class="trigFx">`cot(x)`</td>
+                <td title="clp">`)`</td>
+            </tr>
+            <tr>
+                <td title="log">`log_y (x)`</td>
+                <td title="one">1</td>
+                <td title="two">2</td>
+                <td title="thr">3</td>
+                <td title="ivt" class="finvtrig" onclick="invtrig(this.className[0])">`trig^-1`</td>
+            </tr>
+            <tr>
+                <td title="ln_">`ln`</td>
+                <td title="fur">4</td>
+                <td title="fiv">5</td>
+                <td title="six">6</td>
+                <td title="zer">0</td>
+            </tr>
+            <tr>
+                <td title="lne">`e^x`</td>
+                <td title="sev">7</td>
+                <td title="eig">8</td>
+                <td title="nin">9</td>
+                <td title="bas" class="base">x</td>
+            </tr>
+        </table>
+        <div class="calcEval">Evaluate</div>
+    </div>
 </body>
 
 </html>

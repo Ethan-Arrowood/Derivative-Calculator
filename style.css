@@ -1,0 +1,49 @@
+#functionInfo {
+            height: auto;
+            width: auto;
+            border: 1px solid black;
+            padding: 5px;
+            text-align: center;
+            font-weight: 600;
+            font-size: 1.2em;
+            font-family: Roboto;
+        }
+        #functionInput {
+            border: 1px solid black;
+        }
+
+.calculator {
+    display: inline-block;
+    border: 1px solid black;
+    padding: 5px;
+}
+.entryField {
+    padding: 3px;
+    margin-bottom: 5px;
+    border: 1px solid red;
+    background-color: orangered;
+    color: white;
+}
+.calcButtons {
+    padding: 3px;
+    border: 1px solid blue;
+    margin-bottom: 5px;
+}
+.calcButtons td {
+    padding: 3px;
+    border: 1px solid black;
+    text-align: center;
+    border-radius: 5px;
+}
+.calcEval {
+    padding: 3px;
+    border: 1px solid green;
+    text-align: center;
+    border-radius: 5px;
+    background-color: greenyellow;
+    color: black;
+}
+
+.tinvtrig {
+    background-color: deepskyblue;
+}
